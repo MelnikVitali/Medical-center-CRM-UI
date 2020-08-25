@@ -1,0 +1,78 @@
+@import "../variables";
+
+.activation-modal {
+  &__header {
+    position: relative;
+    color: $white;
+    background: $blueGreen;
+    text-align: center;
+    border: 3px solid $blue;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+    letter-spacing: 1px;
+    font-size: $fontSize28;
+  }
+
+  &__form {
+    margin: 0 auto;
+    padding: 20px 30px;
+    border: 3px solid $blue;
+    background: white;
+    border-radius: 0 0 10px 10px;
+  }
+
+  &__input-group {
+    margin: 10px 0 10px 0;
+
+    &_display-flex {
+      display: flex;
+      justify-content: center;
+      margin-top: 0;
+    }
+  }
+
+  &__label {
+    display: block;
+    text-align: left;
+    margin: 3px;
+    color: $blue;
+    font-weight: 500;
+  }
+
+  &__input {
+    height: 30px;
+    width: 93%;
+    padding: 5px 10px;
+    font-size: $fontSize16;
+    border-radius: 5px;
+    border: 1px solid $blue;
+  }
+
+  &__btn {
+    display: inline-block;
+    font-size: $fontSize15;
+    text-transform: uppercase;
+    padding: 10px 10px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: $white;
+    outline: none;
+    color: $blue;
+    border: 2px solid $blue;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+      color: white;
+      background-color: $blue;
+    }
+  }
+
+  &__error-message {
+    color: red;
+    font-weight: 600;
+    font-size: $fontSize15;
+  }
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <link href="img/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="css/main.min.css">
+
+    <title>Visit Doctor</title>
+</head>
+<body>
+<div class="wrapper" id="wrapper">
+
+    <!---------------------sections header--------------------------------------->
+    <header class="header" id="header">
+        <div class="header__container">
+            <a href="#" class="header__link">
+                <img src="img/Medical_icons.png" class="header__logo" alt="logo">
+                <span class="header__link-text">MEDICAL CENTER</span>
+            </a>
+            <button class="header__activation-btn" id="activation-btn">АКТИВАЦИЯ</button>
+            <button class="header__create-visit-btn close" id="create-visit-btn">СОЗДАТЬ ВИЗИТ</button>
+        </div>
+    </header>
+
+    <!-------------------sections filter-visit------------------------------->
+    <section class="filter-visits">
+        <div class="filter-visits__container">
+            <form class="filter-visits__form" id="filter-cards">
+                <label for="filter-title"></label>
+                <input class="filter-visits__input" id="filter-title" placeholder="Цель визита..." type="text">
+                <button type="submit" title="Поиск по заголовку" class="filter-visits__button"
+                        id="search-btn-title"></button>
+            </form>
+            <div class='filter-visits__select-container'>
+                <label>
+                    <select class='filter-visits__select' id="filter-status">
+                        <option selected value='Все'>Статус визита</option>
+                        <option value='Открыт'>Открыт</option>
+                        <option value='Закрыт'>Закрыт</option>
+                    </select>
+                </label>
+            </div>
+            <div class='filter-visits__select-container'>
+                <label>
+                    <select class='filter-visits__select' id="filter-priority">
+                        <option selected value='Все'>Срочность визита</option>
+                        <option value='Обычный'>Обычный</option>
+                        <option value='Срочный'>Срочный</option>
+                        <option value='Не срочный'>Не срочный</option>
+                    </select>
+                </label>
+            </div>
+            <input type="button" title="Поиск по заголовку и параметрам" class="filter-visits__search-btn"
+                   id="search-btn" value="Поиск">
+        </div>
+    </section>
+
+    <!------------------------sections visit-board-------------------------------------->
+    <section class="visit-board" id="visit-board">
+        <p class="visit-board__message" id="board-message">Не создано ни одного визита</p>
+    </section>
+</div> <!--end wrapper-->
+
+<!-----------------------------footer-------------------------------------------->
+<footer class="footer"><p>Step-project-cards | Melnik Vitaliy | &copy; Copyright 2019</p></footer>
+
+<!---------------------sections activation-modal--------------------------------->
+<section class="activation-modal  modal close" id="activation-modal">
+    <div class="activation-modal__block modal-block">
+        <div class="activation-modal__header">
+            <i class="icon-cancel modal__close-btn close-btn" title="Закрыть окно"></i>
+            <h2 class="activation-modal__title">Активация</h2>
+        </div>
+        <form class="activation-modal__form" id="activation-form">
+            <div class="activation-modal__input-group">
+                <label for="email" class="activation-modal__label">Email</label>
+                <input type="email" name="email" id="email" class="activation-modal__input" value="mvitalim@ukr.net"
+                       required>
+            </div>
+            <div class="activation-modal__input-group">
+                <label for="password" class="activation-modal__label">Password</label>
+                <input type="password" name="password" id="password" class="activation-modal__input" value="vitali"
+                       required>
+            </div>
+            <p class="activation-modal__error-message" id="error-message"></p>
+            <div class="activation-modal__input-group activation-modal__input-group_display-flex ">
+                <div class="activation-modal__btn" id="submitBtn">Отправить</div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!---------------------sections confirm-modal--------------------------------->
+<section class="confirm-modal modal close" id="confirm-modal">
+    <div class="confirm-modal__block modal-block">
+        <div class="confirm-modal__header">
+            <i class="icon-cancel modal__close-btn close-btn" title="Закрыть окно"></i>
+            <h2 class="confirm-modal__title">Продолжить операцию с карточкой?</h2>
+        </div>
+        <div class="confirm-modal__block-btn">
+            <div class="confirm-modal__btn ok-btn">Подтвердить</div>
+            <div class="confirm-modal__btn cancel-btn">Отмена</div>
+        </div>
+    </div>
+</section>
+
+<!---------------------sections modal--------------------------------->
+<section class="create-modal modal close" id="create-cards-modal">
+    <div class="create-modal__block modal-block">
+        <div class="create-modal__container">
+            <i class="icon-cancel create-modal__close-btn close-btn" id="modalClose" title="Закрыть окно"></i>
+            <form class="modal-form" id="form">
+                <div class="modal-form__select-container">
+                    <p class="modal-form__select-description">Врач:</p>
+                    <label for="select-form-specialty"></label>
+                    <select class="modal-form__select" id="select-form-specialty">
+                        <option selected value="selected" disabled>Выберите врача</option>
+                        <option class="modal-form__select-item" value="Терапевт">Терапевт</option>
+                        <option class="modal-form__select-item" value="Стоматолог">Стоматолог</option>
+                        <option class="modal-form__select-item" value="Кардиолог">Кардиолог</option>
+                    </select>
+                </div>
+                <div class="modal-form__select-container modal__hidden-item" id="select-block-specialists"></div>
+                <div class="modal-form__select-container modal__hidden-item close" id="select-block-priority">
+                    <p class="modal-form__select-description">Срочность: </p>
+                    <label for="select-priority"></label>
+                    <select class="modal-form__select" id="select-priority">
+                        <option class="modal-form__select-item" value="Обычный">Обычный</option>
+                        <option class="modal-form__select-item" value="Срочный">Срочный</option>
+                        <option class="modal-form__select-item" value="Не срочный">Не срочный</option>
+                    </select>
+                </div>
+                <div class="modal-form__select-container modal-form__select-container_m-bottom modal__hidden-item close"
+                     id="select-block-status">
+                    <p class="modal-form__select-description">Статус: </p>
+                    <label for="select-status"></label>
+                    <select class="modal-form__select" id="select-status">
+                        <option class="modal-form__select-item" value="Открыт">Открыт</option>
+                        <option class="modal-form__select-item" value="Закрыт">Закрыт</option>
+                    </select>
+                </div>
+                <div class="modal-form__wrapper-input" id="wrapper-input"></div>
+                <p class="modal-form__text modal__hidden-item close" id="modal-text">* - обязательное поле для
+                    заполнения</p>
+                <label for="modal-area">
+                    <input type="text" placeholder="Краткое описание визита"
+                           class="modal-form__area modal__hidden-item close" id="modal-area"/>
+                </label>
+                <div class="create-modal__create-block modal__hidden-item close">
+                    <button type="button" class="create-modal__create-btn close" id="create-card-btn">СОЗДАТЬ</button>
+                    <button type="button" class="create-modal__create-btn" id="edit-card-btn">Редактировать</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!---------------------div modal-overlay--------------------------------->
+<div class="modal-overlay close"></div>
+
+<!---------------------div preloader--------------------------------->
+<div class="preloader close" id="preloader">
+    <p class="preloader-text">Загрузка</p>
+</div>
+
+<!-------- javascript --------------->
+<script src="js/libs.min.js"></script>
+<script src="js/main.min.js"></script>
+
+</body>
+</html>

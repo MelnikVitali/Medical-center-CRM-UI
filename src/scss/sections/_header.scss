@@ -1,0 +1,55 @@
+@import "../variables";
+
+.header {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    border-radius: 12px;
+    padding: 0.3rem 2rem;
+  }
+
+  &__link {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+  }
+
+  &:hover &__link-text {
+    color: $green;
+  }
+
+  &__link-text {
+    color: $darkBlue;
+    font-size: $fontSize22;
+  }
+
+  &__logo {
+    width: 80px;
+  }
+
+  &__create-visit-btn,
+  &__activation-btn {
+    border-radius: 12px;
+    background-color: white;
+    color: $blue;
+    border: 2px solid $blue;
+    font-weight: 700;
+    font-size: $fontSize18;
+    padding: 12px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover {
+      color: white;
+      background-color: $blue;
+      transition: 0.3s;
+    }
+  }
+}

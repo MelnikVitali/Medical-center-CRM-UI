@@ -1,0 +1,44 @@
+@import "_reset";
+@import "_fonts";
+@import "_variables";
+@import "_classes";
+
+body,
+html {
+  height: 100%;
+  overflow: auto;
+}
+
+* {
+  outline: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $blueGreen;
+  position: relative;
+  min-width: 490px;
+
+}
+
+.wrapper {
+  background-color: $blueGreen;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px 35px;
+}
+
+/**************sections**********************/
+@import "sections/_header";
+@import "sections/_filter-visit";
+@import "sections/_visit-board";
+@import "sections/_activation-modal";
+@import "sections/_confirm-modal";
+@import "sections/_create-modal";
+@import "sections/_visit-card";
+@import "sections/_footer";
+@import "sections/_preloader";
+
+
+

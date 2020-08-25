@@ -1,0 +1,134 @@
+@import "../variables";
+
+.create-modal {
+  &__block {
+    min-height: 130px;
+    min-width: 400px;
+    width: 60%;
+    background-color: $blueGreen;
+    padding: 5px;
+    font-size: $fontSize15;
+    border-radius: 20px;
+    border: 5px solid $blue;
+  }
+
+  &__close {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__create-block {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0 10px;
+  }
+
+  &__create-btn {
+    font-size: $fontSize15;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: $white;
+    outline: none;
+    letter-spacing: 1px;
+    color: #348de8;
+    border: 2px solid #348de8;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+      color: white;
+      background-color: #348de8;
+    }
+  }
+
+  &__error-message {
+    color: $red;
+    font-weight: 700;
+    margin: 5px;
+    letter-spacing: 3px;
+    font-size: $fontSize18;
+  }
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  margin: auto 30px auto 20px;
+  position: relative;
+
+  &__input-block {
+    white-space: nowrap;
+  }
+
+  &__select-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+    &_m-bottom {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__select-description {
+    margin-right: 5px;
+    font-size: $fontSize16;
+    font-weight: 600;
+  }
+
+  &__select {
+    width: 75%;
+    font-size: $fontSize14;
+    color: $blue;
+    outline: none;
+    padding: 1px 0;
+    border: 1px solid $blue;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  &__input {
+    display: block;
+    width: 90%;
+    margin-bottom: 7px;
+    padding: 2px 0 2px 6px;
+    color: $blue;
+    font-size: $fontSize14;
+    border: 1px solid $blueGreen;
+    border-radius: 3px;
+    outline-color: $blue;
+    text-overflow: ellipsis;
+
+    &::placeholder {
+      color: $blue;
+    }
+  }
+
+  &__text {
+    font-family: sans-serif;
+    font-size: 13px;
+    color: $black;
+    margin: 8px 0 3px;
+  }
+
+  &__area {
+    width: 90%;
+    height: 40px;
+    font-size: $fontSize14;
+    color: $blue;
+    padding-left: 7px;
+    resize: none;
+    border: 1px solid $blueGreen;
+    border-radius: 3px;
+    outline-color: $blue;
+    text-overflow: ellipsis;
+
+    &::placeholder {
+      color: $blue;
+    }
+  }
+}
+
+
+

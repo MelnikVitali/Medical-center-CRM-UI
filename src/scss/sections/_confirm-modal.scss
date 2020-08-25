@@ -1,0 +1,54 @@
+@import "../variables";
+
+.confirm-modal {
+  &__header {
+    position: relative;
+    color: $white;
+    background: $blueGreen;
+    text-align: center;
+    border: 3px solid $blue;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 40px 30px 20px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: $fontSize28;
+  }
+
+  &__block-btn {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 20px 30px;
+    border: 3px solid $blue;
+    background: white;
+    border-radius: 0 0 10px 10px;
+  }
+
+  &__button-group {
+    margin: 10px 0 10px 0;
+  }
+
+  &__btn {
+    display: inline-block;
+    font-size: $fontSize15;
+    text-transform: uppercase;
+    padding: 10px 10px;
+    margin: 10px 20px;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: $white;
+    outline: none;
+    color: $blue;
+    border: 2px solid $blue;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+      color: white;
+      background-color: $blue;
+    }
+  }
+}
+
+

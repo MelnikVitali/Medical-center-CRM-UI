@@ -1,0 +1,141 @@
+@import "../variables";
+
+.visit-card {
+  position: relative;
+  max-width: none;
+  min-width: 268px;
+  margin: 7px;
+  padding: 13px;
+  background-color: $blue;
+  color: $white;
+  font-size: $fontSize14;
+  font-weight: 700;
+  border-radius: 5px;
+  transition: all 0.5s linear;
+
+  & p {
+    margin: 12px 0;
+  }
+}
+
+.visit-card .close-btn {
+  position: absolute;
+  align-self: flex-end;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: $white;
+  font-size: $fontSize24;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    color: $red;
+  }
+}
+
+.visit-card .hidden-block {
+  overflow: hidden;
+  max-height: 300px;
+  transition: max-height .7s;
+}
+
+.hidden-block p {
+  margin-top: 4px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.hidden-block.hidden {
+  max-height: 0;
+}
+
+.show-more {
+  display: inline-flex;
+  text-align: center;
+  align-self: stretch;
+  cursor: pointer;
+  font-size: $fontSize12;
+  font-weight: 500;
+  border-bottom: 1px solid $white;
+
+  &:hover {
+    color: $aquamarine;
+    border-color: $aquamarine;
+  }
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: absolute;
+  display: inline-flex;
+  bottom: 0;
+  right: 0;
+  margin: 5px;
+
+  /* Dropdown Button */
+  &__change-btn {
+    display: flex;
+    background-color: $blueGreen;
+    color: $white;
+    font-weight: 600;
+    border: 2px solid $white;
+    border-radius: 7px;
+    padding: 2px 0;
+    font-size: $fontSize18;
+    outline: none;
+    cursor: pointer;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  &__content {
+    display: none;
+    position: absolute;
+    background-color: $lightGrey;
+    min-width: 80px;
+    border-radius: 3px;
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  &__link {
+    color: $blue !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    /* Change color of dropdown links on hover */
+    &:hover {
+      background-color: $dropdownGreyHover;
+      border: 1px solid $dropdownBorderHover;
+    }
+  }
+
+  /* Show the dropdown menu on hover */
+  &:hover .dropdown__content {
+    display: block;
+  }
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  &:hover,
+  &__change-btn:hover {
+    background-color: $aquamarine;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
